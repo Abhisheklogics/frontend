@@ -6,12 +6,12 @@ export default defineConfig({
   
     proxy:{
       
-      "/arduino/getespData": 'https://adhyans-backend.onrender.com/',
-      "/arduino/datasave":'https://adhyans-backend.onrender.com/',
-      "/arduino/getDataArduino":'https://adhyans-backend.onrender.com/',
-      "/arduino/getDataRaspberry": 'https://adhyans-backend.onrender.com/',
-      "/arduino/homeImagesSave":'https://adhyans-backend.onrender.com/',
-      "/arduino/homeData":'https://adhyans-backend.onrender.com/',
+      "/arduino/getespData": 'https://adhyans-backend.onrender.com',
+      "/arduino/datasave":'https://adhyans-backend.onrender.com',
+      "/arduino/getDataArduino":'https://adhyans-backend.onrender.com',
+      "/arduino/getDataRaspberry": 'https://adhyans-backend.onrender.com',
+      "/arduino/homeImagesSave":'https://adhyans-backend.onrender.com',
+      "/arduino/homeData":'https://adhyans-backend.onrender.com',
      
     } ,
       build: {
