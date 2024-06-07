@@ -1,8 +1,8 @@
-import React from 'react'
+import React ,{lazy,Suspense} from 'react'
 import ReactDOM from 'react-dom/client'
 
 import { RouterProvider ,createBrowserRouter } from 'react-router-dom'
-import { Routes } from './components/Routes/Routes';
+import {Routes} from './components/Routes/Routes'
 
 
 const router = createBrowserRouter(Routes);

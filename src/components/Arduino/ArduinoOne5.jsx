@@ -2,7 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import CodeDemo from "../Code/Code";
 let applyData
-export default function Arduino5(props)
+export default function ArduinoOne5(props)
  {
   applyData= useLoaderData()
 

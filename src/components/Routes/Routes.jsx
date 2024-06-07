@@ -1,10 +1,11 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, createRoutesFromElements } from 'react-router-dom';
-import App from '../../App.jsx';
+
 import axios from 'axios';
 
 // Lazy loading components
-const Home = lazy(() => import('../header/Home.jsx'));
+const App=lazy(()=>import('../../App.jsx'))
+const Home = lazy(() => import('../Home/Home.jsx'));
 const Resall = lazy(() => import('../Res/Res.jsx'));
 const Res5images = lazy(() => import('../Res/Res5images.jsx'));
 const ResNotSp = lazy(() => import('../Res/ResNotsp.jsx'));
@@ -12,7 +13,9 @@ const ResAllExperiment = lazy(() => import('../Res/AllRes.jsx'));
 const AllExperiment = lazy(() => import('../Arduino/AllExperiment.jsx'));
 const Arduino = lazy(() => import('../Arduino/Arduino.jsx'));
 const Arduino6 = lazy(() => import('../Arduino/Aduino6.jsx'));
-const Arduino5 = lazy(() => import('../Arduino/Arduino5.jsx'));
+const ArduinoOne5 = lazy(() => import('../Arduino/ArduinoOne5.jsx'));
+const ArduinoTwo5 =lazy(()=>import('../Arduino/ArduinoTwo.jsx'))
+const ArduinoThree5 =lazy(()=>import('../Arduino/ArduinoThree.jsx'))
 const ArduinoAlag = lazy(() => import('../Arduino/Arduinoalag.jsx'));
 const Esp = lazy(() => import('../esp/Esp.jsx'));
 const EspExperiments = lazy(() => import('../esp/AllEspexperiments.jsx'));
@@ -23,7 +26,7 @@ import { getEspData,getArduinoData,getRaspberryData } from '../../../db.call/Ard
 
 // Routes configuration
 export const Routes = createRoutesFromElements(
-  <Route path='/' element={<App />}>
+  <Route path='/' element={<Suspense><App /></Suspense>}>
     <Route path='' element={<Suspense ><Home /></Suspense>} loader={async () => {
       const response = await axios.get('arduino/homeData');
       return response.data;
@@ -32,68 +35,74 @@ export const Routes = createRoutesFromElements(
     <Route path='arduino' element={<Suspense fallback={<div>Loading...</div>}><Arduino /></Suspense>}>
       <Route path='' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment code={`int sensor_pin=13; 
       int sensor_state=1; 
-      void setup(){ pinMode(13,INPUT); 
+      void setup()
+      {
+       pinMode(13,INPUT); 
       Serial.begin(9600);
-}
-
-void loop(){
-
-Serial.print("Soil Moisture Level: "); 
-sensor_state = digitalRead(sensor_pin); 
-if (sensor_state == 1) { Serial.println("Wet");
-}
-
-else { Serial.println("Dry");
-
-}
-
-delay(200);
-
-}
+      }
+     void loop()
+     {
+         Serial.print("Soil Moisture Level: "); 
+        sensor_state = digitalRead(sensor_pin); 
+      if (sensor_state == 1)
+       {
+       Serial.println("Wet");
+       }
+     else 
+     { 
+     Serial.println("Dry");
+      }
+         delay(200);
+     }
 `}/></Suspense>} loader={async () => {
         const response = await axios.get('/arduino/getDataArduino', { params: { exId: 1 } });
         return response.data;
       }} />
-      <Route path='ex1' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment  code={`int sensor_pin=13;
-       int sensor_state=1;
-        void setup(){ pinMode(13,INPUT); 
-          Serial.begin(9600);
-}
+      <Route path='ex1' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment  code={`
+      int sensor_pin=13;
+      int sensor_state=1;
+      void setup()
+        { 
+         pinMode(13,INPUT); 
+         Serial.begin(9600);
+        }
+       void loop()
+     {
+      Serial.print("Soil Moisture Level: "); 
+      sensor_state = digitalRead(sensor_pin); 
+      if (sensor_state == 1) 
+      { 
+           Serial.println("Wet");
+      }
 
-void loop(){
-
-Serial.print("Soil Moisture Level: "); 
-sensor_state = digitalRead(sensor_pin); 
-if (sensor_state == 1) { Serial.println("Wet");
-}
-
-else { Serial.println("Dry");
-
-}
-
-delay(200);
-
-}
+      else 
+       { 
+         Serial.println("Dry");
+       }
+           delay(200);
+     }
 `}/></Suspense>} loader={() => { return getArduinoData(1)}} />
 
       <Route path='ex2' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment code={`
 const int motorPin = 9;
-void setup() {
+void setup() 
+{
 pinMode(motorPin, OUTPUT);
 }
-void loop() {
-digitalWrite(motorPin, HIGH);
-delay(2000);
-digitalWrite(motorPin, LOW);
-delay(1000);
-digitalWrite(motorPin, HIGH);
-delay(2000);
-digitalWrite(motorPin, LOW);
-delay(1000);
+void loop()
+ {
+  digitalWrite(motorPin, HIGH);
+  delay(2000);
+  digitalWrite(motorPin, LOW);
+  delay(1000);
+  digitalWrite(motorPin, HIGH);
+  delay(2000);
+  digitalWrite(motorPin, LOW);
+  delay(1000);
 }
 `}/></Suspense>} loader={() => { return getArduinoData(2)}} />
       <Route path='ex3' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment  code={`
-          int A= 3;
+int A= 3;
 int B= 4;
 int C= 5;
 int D= 6;
@@ -103,19 +112,21 @@ int G= 9;
 int X= 13;
 int Y= 12; 
 int Z= 11;
-void setup() {
+void setup()
+ {
  pinMode(A,OUTPUT);
  pinMode(B,OUTPUT);
-           pinMode(C,OUTPUT);
+ pinMode(C,OUTPUT);
  pinMode(D,OUTPUT);
  pinMode(E,OUTPUT);
  pinMode(F,OUTPUT);
  pinMode(G,OUTPUT);
  pinMode(X,OUTPUT);
  pinMode(Y,OUTPUT);
-   pinMode(Z,OUTPUT);  
+pinMode(Z,OUTPUT);  
   }
-  void loop(){
+  void loop()
+  {
   digitalWrite(A,HIGH);
   digitalWrite(B,HIGH);
   digitalWrite(C,HIGH);
@@ -228,20 +239,22 @@ void setup() {
   delay(2000);
 }
 `}/></Suspense>} loader={() => {return getArduinoData(3)}} />
-      <Route path='ex4' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment code={`int PIR PIN = 4;
-
-void setup() {
+      <Route path='ex4' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment code={`
+int PIR PIN = 4;
+void setup()
+ {
     serial.begin(9600);
     pinMode(PIR PIN, INPUT);
     delay(1000);
 }
-Void loop() {
+Void loop() 
+{
      int motionDetected = digitalRead(PIR PIN);
-    
-     if (motionDetected = = HIGH)  {
+     if (motionDetected = = HIGH) 
+       {
          serial.println(“Motion detected!”);
-     }
-     delay(500);
+       }
+        delay(500);
 }
 `} /></Suspense>} loader={() => getArduinoData(4)} />
       <Route path='ex5' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment  code={`#define echoPin 2 
@@ -251,14 +264,16 @@ Void loop() {
 long duration; 
 int distance;
 
-void setup() {
+void setup() 
+{
   pinMode(trigPin, OUTPUT); 
   pinMode(echoPin, INPUT);
   pinMode(led,OUTPUT);
   Serial.begin(9600); 
   Serial.println()
 }
-void loop() {
+void loop() 
+{
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
@@ -268,10 +283,13 @@ void loop() {
   Serial.print("Distance: ");
   Serial.print(distance);
   Serial.println(" cm");
-  if(distance<200){
+  if(distance<200)
+  {
     digitalWrite(led,HIGH);
-  }else
-  {digitalWrite(led,LOW);
+  }
+ else
+  {
+ digitalWrite(led,LOW);
   }
 }
 
@@ -285,21 +303,26 @@ int distance;
   pinMode(1,OUTPUT);
  pinMode(13,OUTPUT);
 }
-void loop(){
+void loop()
+{
   digitalWrite(b,LOW);
   delayMicroseconds(2);
   digitalWrite(b,HIGH);
   delayMicroseconds(10);
   digitalWrite(b,LOW);
-Duration=pulseIn(1,HIGH);
+  Duration=pulseIn(1,HIGH);
   distance=Duration*0.034/2;
-  if(distance<40){
+  if(distance<40)
+  {
    digitalWrite(c,HIGH);  
 
-  }else{
+  }
+   else
+   {
     digitalWrite(c,LOW);
   
-  }}
+  }
+    }
 `} /></Suspense>} loader={() => getArduinoData(6)} />
       <Route path='ex7' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment code={`int A=3;
 int B=4;
@@ -408,16 +431,17 @@ digitalWrite(G, HIGH);
 `}  /></Suspense>} loader={() => getArduinoData(7)} />
       <Route path='ex8' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment code={`#include <LiquidCrystal.h>
 LiquidCrystal lcd(12,11,5,4,3,2);
-void setup(){
+void setup()
+{
   lcd.begin(16,2);
-  lcd.print("ANJALI KUMARI"); 
-            
+  lcd.print("ANJALI KUMARI");            
 }
 void loop(){}
 `} /></Suspense>} loader={() => getArduinoData(8)} />
       <Route path='ex9' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment code={`#include <LiquidCrystal.h>
 LiquidCrystal lcd(12,11,5,4,3,2);
-void setup(){
+void setup()
+{
   lcd.begin(16,2);
   lcd.print("Garima Dixit!");
             }
@@ -426,7 +450,8 @@ void loop(){}
       <Route path='ex10' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment  code={`void setup() {
   pinMode(13, OUTPUT); // Set pin 13 as an output
 }
-void loop() {
+void loop() 
+{
   digitalWrite(13, HIGH); 
   delay(1000);            
   digitalWrite(13, LOW);  
@@ -445,10 +470,12 @@ void loop (){
   delay(1000);
   }`}/></Suspense>} loader={() => getArduinoData(11)} />
       <Route path='ex12' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment  code={`const int dirPin1 = 13;  
-void setup() {
+void setup() 
+{
 pinMode(dirPin1, OUTPUT);
 }
-void loop() {
+void loop()
+ {
  digitalWrite(dirPin1, HIGH);
  digitalWrite(dirPin1, LOW);
 }
@@ -456,39 +483,35 @@ void loop() {
       <Route path='ex13' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment code={`#include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
-
 #define OLED_RESET -1
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-
-Void setup() {
+Void setup() 
+{
   // Initialize OLED display with the I2C address 0x3C (for the 128x64 OLED)
   If(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println(F(“SSD1306 allocation failed”));
     For(;;);
   }
-
   // Clear the buffer
   Display.clearDisplay();
-  
   // Set text size, color, and display a message
   Display.setTextSize(1);
   Display.setTextColor(SSD1306_WHITE);
   Display.setCursor(0, 0);
-  Display.println(“Hello, OLED!”);
-  
+  Display.println(“Hello, OLED!”); 
   // Display the message
   Display.display();
 }
-
-Void loop() {
+Void loop() 
+{
   // Display doesn’t need refreshing in this simple example
 }
 
 `} /></Suspense>} loader={() => getArduinoData(13)} />
-      <Route path='ex14' element={<Suspense fallback={<div>Loading...</div>}><Arduino5  code={`void setup()
+      <Route path='ex14' element={<Suspense fallback={<div>Loading...</div>}><ArduinoOne5  code={`
+void setup()
 {
 pinMode(2,INPUT);
 pinMode(13,OUTPUT);
@@ -506,7 +529,7 @@ digitalWrite(13,LOW);
 }
 }
 `} /></Suspense>} loader={() => getArduinoData(14)} />
-      <Route path='ex15' element={<Suspense fallback={<div>Loading...</div>}><Arduino5  code={`int A= 6;
+      <Route path='ex15' element={<Suspense fallback={<div>Loading...</div>}><ArduinoTwo5  code={`int A= 6;
   int B= 13;
   void setup(){
   pinMode(A,INPUT);
@@ -525,19 +548,21 @@ digitalWrite(13,LOW);
  }
    
 `} /></Suspense>} loader={() => getArduinoData(15)} />
-      <Route path='ex16' element={<Suspense fallback={<div>Loading...</div>}><Arduino5  code={`#include <DHT.h>
+      <Route path='ex16' element={<Suspense fallback={<div>Loading...</div>}><ArduinoThree5  code={`#include <DHT.h>
 
 #define DHTPIN 8     // Digital pin connected to the DHT sensor
 #define DHTTYPE DHT22   // DHT 22  (AM2302)
 
 DHT dht(DHTPIN, DHTTYPE);
 
-void setup() {
+void setup()
+ {
   Serial.begin(9600);
   dht.begin();
 }
 
-void loop() {
+void loop() 
+{
   delay(2000);  // Wait for 2 seconds between measurements
 
   float humidity = dht.readHumidity();
@@ -559,87 +584,73 @@ void loop() {
 }
 
 `}/></Suspense>} loader={() => getArduinoData(16)} />
-      <Route path='ex17' element={<Suspense fallback={<div>Loading...</div>}><Arduino5 /></Suspense>} loader={() => getArduinoData(17)} />
+      <Route path='ex17' element={<Suspense fallback={<div>Loading...</div>}><ArduinoOne5 /></Suspense>} loader={() => getArduinoData(17)} />
       <Route path='ex18' element={<Suspense fallback={<div>Loading...</div>}><ArduinoAlag  code={`#include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-
 #define OLED_RESET 4
 Adafruit_SSD1306 display(OLED_RESET);
-
 #define BUTTON_PIN 2
-
-void setup() {
+void setup() 
+{
   // Initialize OLED display with I2C address 0x3C
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
   display.display();
   delay(2000);  // Pause for 2 seconds
-  
   pinMode(BUTTON_PIN, INPUT_PULLUP); // Set the push button pin as input with internal pull-up resistor
 }
-
-void loop() {
+void loop() 
+{
   // Clear the display
-  display.clearDisplay();
-  
+  display.clearDisplay(); 
   // Read the state of the push button
   int buttonState = digitalRead(BUTTON_PIN);
-  
   // Display button state on OLED
   display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0,0);
   display.print("Button State: ");
   display.println(buttonState == HIGH ? "RELEASED" : "PRESSED");
-
   // Display on OLED
   display.display();
-
   delay(100); // Delay to debounce button (adjust as needed)
 }
 `}/></Suspense>} loader={() => getArduinoData(18)} />
       <Route path='ex19' element={<Suspense fallback={<div>Loading...</div>}><Arduino6 code={`// Define pin connections
 const int trigPin = 9;
 const int echoPin = 10;
-
 // Define variables
 long duration;
 int distance;
-
-void setup() {
+void setup() 
+{
 // Initialize 
 serial communication
-  Serial.begin(9600);
-  
+  Serial.begin(9600); 
  // Define pin modes
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
 }
-
-void loop() {
+void loop() 
+{
 // Clear the trigger pin
   digitalWrite(trigPin,LOW);
-  delayMicroseconds(2);
-  
+  delayMicroseconds(2); 
 /Send a 10 microsecond
  pulse to the trigger pin
-
   digitalWrite(trigPin,HIGH);
   delayMicroseconds(10);
-  digitalWrite(trigPin,LOW);
-  
+  digitalWrite(trigPin,LOW); 
 // Measure the duration of 
 the echo pulse
  duration = pulse In(echo Pin,HIGH);
  Calculate distance in cm 
   (speed of sound is 343 m/s)
   distance = duration * 0.034 / 2;
-  
   // Print distance to the 
   serial monitor
   Serial.print("Distance: ");
   Serial.print(distance);
-  Serial.println(" cm");
-  
+  Serial.println(" cm"); 
   // Delay before next reading
   delay(1000);
 `}/></Suspense>} loader={() => getArduinoData(19)} />

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import axios from "axios";
+
 
 
 export default function Arduino()
@@ -10,12 +10,13 @@ export default function Arduino()
    
     return(
         <>
-       <div className=" xs:hidden xs:absolute xs:mt-0 xs:p-2 xs:m-1 xs:text-sm
+       <div className=" xs:h-10 xs:bg-white  xs:hidden  xs:overflow-scroll xs:justify-evenly xs:p-2 xs:mt-1 xs:mt-28  xs:w-full xs:flex xs:absolute   
      xl:block xl:absolute xl:mt-28 xl:p-2 xl:m-1 " >
-       <ul className="xs:p-1 xs:m-1 xs:text-blue-400
+       <ul className="xs:flex  xs:scroll-auto xs:mt-10 xs:text-blue-400
        xl:p-1 xl:m-1 xl:text-blue-400">
        
        <NavLink to="ex1" className={({isActive})=>`${isActive?"text-red-950":"text-gray-900"}`}>
+       
         <li >
             Arduino Experiment 1
         </li>

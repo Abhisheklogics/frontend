@@ -3,26 +3,18 @@ export default function Contactus()
 {
   return(
     <>
-    <div style={{height:'500px',width:'600px',backgroundColor:"white",marginTop:'65px',marginLeft:'200px'}}>
-        <h1 style={{marginLeft:'20px'}}>
-            Contacts Us
-        </h1>
-    <div style={{height:'400px',width:'400px',border:'1px solid red', marginLeft:'100px',borderRadius:'10PX'}}>
-<div  style={{marginTop:"20px"}}>
-    <h3  style={{height:'20px',width:"250px",backgroundColor:'red', color:'white', padding:'5px',
-        marginLeft:'50px',textAlign:'center'
-    }}>Contact Us Form</h3>
-   <p style={{marginLeft:'10px',marginTop:'10px'}}> Name :<input  placeholder="enter name..." style={{marginLeft:'19px',marginTop:'-10px',height:'20px',borderRadius:'5PX',borderColor:'pink'}}/></p>
- <p  style={{marginLeft:'10px',marginTop:'0px'}}>   Mobile:<input placeholder="enter mobile..." style={{marginLeft:'14px',marginTop:'-20px',height:'20px',borderRadius:'5PX',borderColor:'pink'}}/></p>
- <p  style={{marginLeft:'10px',marginTop:'0px'}}>   Email :<input placeholder="enter email..." style={{marginLeft:'16px',marginTop:'-20px',height:'20px',borderRadius:'5PX',borderColor:'pink'}}/></p>
- <p  style={{marginLeft:'10px',marginTop:'0px'}}>  Subject :<input placeholder="enter subject..."style={{marginLeft:'9px',marginTop:'-20px',height:'20px',borderRadius:'5PX',borderColor:'pink'}}/></p>
- <p  style={{marginLeft:'10px',marginTop:'0px',}}>   Message :<input placeholder="enter message.." style={{marginLeft:'10px',marginTop:'0px',height:'100px',borderRadius:'5px',borderColor:'pink'}}/></p>
-    <button style={{height:'40px',width:'200px',marginLeft:'80px',marginTop :'0px',backgroundColor:'#348de0',color:'white'}}>Submit</button>
-</div>
-
-
-    </div>
-    </div>
+    
+    <div className=" xl:bg-black xl:text-white  xl:absolute xl:top-full xl:mt-52 xl:w-full xl:border-black xl:border-solid xl:border-2
+xl:flex xl:justify-evenly
+">
+        <h1 className="xl:text-2xl" >Tutrials</h1>
+          <p className="xl:text-wrap xl:leading-8 xl:mt-6 xl:mr-0">Tutorials Point is a leading Ed Tech <br/>company striving to provide the best<br/> learning material on technical <br/>and  non-technical subjects.</p>
+          <h1 className="xl:text-wrap xl:leading-8 xl:mt-6">About us
+          <ul><li > Contact Us</li></ul>
+          </h1 >
+          <h1 className="xl:text-2xl">Address</h1>
+          <p className="xl:text-wrap xl:leading-8 xl:mt-6">Tutorials Point India Private <br/>Limited, Incor9 Building, Kavuri Hills, Madhapur, <br/>Hyderabad, Telangana - 500081, INDIA</p>
+            </div>  
     </>
   )
 }
