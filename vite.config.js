@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   server:{
-      port:import.meta.env.VITE_APP_PORT,
+      port:import.meta.VITE_APP_PORT,
     proxy:{
       
       "/arduino/getespData": 'https://adhyans-backend.onrender.com',
