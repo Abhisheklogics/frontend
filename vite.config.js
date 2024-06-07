@@ -6,12 +6,12 @@ export default defineConfig({
   
     proxy:{
       
-      "/arduino/getespData": ' http://localhost:10000',
-      "/arduino/datasave":'http://localhost:10000',
-      "/arduino/getDataArduino":'http://localhost:10000',
-      "/arduino/getDataRaspberry": 'http://localhost:10000',
-      "/arduino/homeImagesSave":'http://localhost:10000',
-      "/arduino/homeData":'http://localhost:10000',
+      "/arduino/getespData": 'https://adhyans-backend.onrender.com',
+      "/arduino/datasave":'https://adhyans-backend.onrender.com',
+      "/arduino/getDataArduino":'https://adhyans-backend.onrender.com',
+      "/arduino/getDataRaspberry": 'https://adhyans-backend.onrender.com',
+      "/arduino/homeImagesSave":'https://adhyans-backend.onrender.com',
+      "/arduino/homeData":'https://adhyans-backend.onrender.com',
      
     } ,
       
