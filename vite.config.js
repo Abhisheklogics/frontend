@@ -9,25 +9,25 @@ export default defineConfig({
       
       
         '/arduino/homeData': {
-          target: 'http://localhost:10000', // Replace with your backend URL
+          target: 'https://adhyans-backend.onrender.com', // Replace with your backend URL
           changeOrigin: true,
           secure: true,
           logLevel: 'debug', // Enable detailed logging
         },
         '/arduino/getDataArduino': {
-          target: 'http://localhost:10000', // Replace with your backend URL
+          target: 'https://adhyans-backend.onrender.com', // Replace with your backend URL
           changeOrigin: true,
           secure: true,
           logLevel: 'debug', // Enable detailed logging
         },
         '/arduino/getDataRaspberry': {
-          target: 'http://localhost:10000', // Replace with your backend URL
+          target: 'https://adhyans-backend.onrender.com', // Replace with your backend URL
           changeOrigin: true,
           secure: true,
           logLevel: 'debug', // Enable detailed logging
         },
         '/arduino/getespData': {
-          target: 'http://localhost:10000', // Replace with your backend URL
+          target: 'https://adhyans-backend.onrender.com', // Replace with your backend URL
           changeOrigin: true,
           secure: true,
           logLevel: 'debug', // Enable detailed logging
