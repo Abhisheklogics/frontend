@@ -21,11 +21,11 @@ export default function Home()
 
 
 
-<div className=" xs:bg-gray-700 xs:absolute xs:top-1/3  xs:mt-20 xs:h-12 xs:w-full xs:text-white xs:p-1 xs:text-center
+<div className=" xs:bg-gray-700 xs:absolute xs:top-1/3  xs:mt-16 xs:h-12 xs:w-full xs:text-white xs:p-1 xs:text-center
   xs:text-2xl xl:absolute xl:top-full xl:mt-3 xl:h-12 xl:w-full xl:bg-gray-700 xl:text-white xl:p-1 xl:text-center xl:text-2xl">
   <h1> Latest technology</h1>
 </div>
-<div className=" xs:bg-gray-200 xs:text-black xs:absolute xs:top-1/3  xs:mt-36 xs:h-fit xs:w-full xs:border-slate-600  xs:border-solid xs:border-2
+<div className=" xs:bg-gray-200 xs:text-black xs:absolute xs:top-1/3  xs:mt-32 xs:h-fit xs:w-full xs:border-slate-600  xs:border-solid xs:border-2
 xs:flex xs:justify-evenly xs:items-center
 xl:absolute xl:top-full xl:mt-16 xl:h-1/3 xl:w-full xl:border-slate-600  xl:border-solid xl:border-2 xl:flex xl:justify-evenly xl:items-center">
 <div>
@@ -54,36 +54,19 @@ xl:h-32 xl:w-56 xl:mt-2 xl:hover:shadow-2xl xl:cursor-pointer xl:rounded-xl" src
 xl:text-center xl:cursor-pointer xl:text-2xl xl: hover:text-blue-900">Esp</p>
 </div>
 </div>
-<div className=" xs:bg-gray-900 xs:text-white xs:absolute xs:top-2/3 xs:p-2 xs:mt-6 xs:h-fit xs:w-full xs:border-slate-600  xs:border-solid xs:border-2
-xs:flex xs:justify-evenly xs:items-center
+<div className=" xs:bg-gray-900 xs:text-white xs:absolute xs:top-1/2 xs:py-2 xs:mt-28 xs:h-fit xs:w-full xs:border-slate-600  xs:border-solid xs:border-2
+
 xl:absolute xl:top-2/3  xl:hidden  xl:mt-full xl:h-1/3 xl:w-full xl:border-slate-600  xl:border-solid xl:border-2 xl:flex xl:justify-evenly xl:items-center">
-<h1 className="xs:text-2xl">
-  website Overveiw
-<p className="xs:text-xl">
-The best technical 
-Learning website
-to provide the best learning material on 
-technical 
-</p>
-</h1>
-<h1 className="xs:mb-56 xs:text-2xl xs:ml-10">
-About Us
-<p className="xs:text-xl">
-  <NavLink to="contact">
-
-  </NavLink>
-contact Us
-</p>
-</h1>
-<h1 className="xs:mb-14 xs:text-2xl xs:ml-10">
-Address
-  <p className="xs:text-xl">
-  
-  
- 
-  </p>
+<h1 className="xs:text-2xl xs:text-center xs:mt-0">
+  Website Overveiw
 
 </h1>
+<p className="xs:text-xl xs:text-center ">
+The Best Free Technical 
+Learning Website
+To Provide The Best Learning Material On 
+ Computer Science
+</p>
 
 </div>
      </div>
