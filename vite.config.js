@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   server:{
-    port:11000,
+    port:10000,
     host:true,
     proxy:{
       
@@ -32,12 +32,7 @@ export default defineConfig({
           secure: true,
           logLevel: 'debug', // Enable detailed logging
         },
-        '/arduino/': {
-          target: 'http://localhost:10000', // Replace with your backend URL
-          changeOrigin: true,
-          secure: true,
-          logLevel: 'debug', // Enable detailed logging
-        },
+       
      
     } ,
     plugins: [visualizer()],
