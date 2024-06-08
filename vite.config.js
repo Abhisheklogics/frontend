@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react'
 import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   server:{
-  
+    port:11000,
+    host:true,
     proxy:{
       
       "/arduino/getespData":'http://localhost:10000/' ,
