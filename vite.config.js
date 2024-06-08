@@ -7,12 +7,37 @@ export default defineConfig({
     host:true,
     proxy:{
       
-      "/arduino/getespData":'http://localhost:10000/' ,
-      "/arduino/datasave":'http://localhost:10000/',
-      "/arduino/getDataArduino":'http://localhost:10000/',
-      "/arduino/getDataRaspberry":'http://localhost:10000/', 
-      "/arduino/homeImagesSave":'http://localhost:10000/',
-      "/arduino/homeData":'http://localhost:10000/',
+      
+        '/arduino/homeData': {
+          target: 'http://localhost:10000', // Replace with your backend URL
+          changeOrigin: true,
+          secure: true,
+          logLevel: 'debug', // Enable detailed logging
+        },
+        '/arduino/getDataArduino': {
+          target: 'http://localhost:10000', // Replace with your backend URL
+          changeOrigin: true,
+          secure: true,
+          logLevel: 'debug', // Enable detailed logging
+        },
+        '/arduino/getDataRaspberry': {
+          target: 'http://localhost:10000', // Replace with your backend URL
+          changeOrigin: true,
+          secure: true,
+          logLevel: 'debug', // Enable detailed logging
+        },
+        '/arduino/getespData': {
+          target: 'http://localhost:10000', // Replace with your backend URL
+          changeOrigin: true,
+          secure: true,
+          logLevel: 'debug', // Enable detailed logging
+        },
+        '/arduino/': {
+          target: 'http://localhost:10000', // Replace with your backend URL
+          changeOrigin: true,
+          secure: true,
+          logLevel: 'debug', // Enable detailed logging
+        },
      
     } ,
     plugins: [visualizer()],
