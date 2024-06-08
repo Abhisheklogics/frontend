@@ -25,7 +25,7 @@ export default function Header()
   xl:flex xl:p-2 xl:text-white ">
   <NavLink to="/"  className={({isActive})=>`${isActive?"text-gray-950":"text-black-400"}`}> 
   
-      <li id='li1' className=" xs:ml-2 xs:hover:bg-slate-100 xs:hover:text-slate-900
+      <li id='li1' className=" xs:ml-2
        xl:ml-3
        ">
      
