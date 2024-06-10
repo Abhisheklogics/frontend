@@ -3,31 +3,30 @@ import react from '@vitejs/plugin-react'
 import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   server:{
-    port:10000,
-    host:true,
+  
     proxy:{
       
       
         '/arduino/homeData': {
-          target: 'https://adhyans-backend.onrender.com', // Replace with your backend URL
+          target: 'http://localhost:10000/', // Replace with your backend URL
           changeOrigin: true,
           secure: true,
           logLevel: 'debug', // Enable detailed logging
         },
         '/arduino/getDataArduino': {
-          target: 'https://adhyans-backend.onrender.com', // Replace with your backend URL
+          target: 'http://localhost:10000/', // Replace with your backend URL
           changeOrigin: true,
           secure: true,
           logLevel: 'debug', // Enable detailed logging
         },
         '/arduino/getDataRaspberry': {
-          target: 'https://adhyans-backend.onrender.com', // Replace with your backend URL
+          target: 'http://localhost:10000/', // Replace with your backend URL
           changeOrigin: true,
           secure: true,
           logLevel: 'debug', // Enable detailed logging
         },
         '/arduino/getespData': {
-          target: 'https://adhyans-backend.onrender.com', // Replace with your backend URL
+          target: 'http://localhost:10000/', // Replace with your backend URL
           changeOrigin: true,
           secure: true,
           logLevel: 'debug', // Enable detailed logging
@@ -37,6 +36,7 @@ export default defineConfig({
     } ,
     plugins: [visualizer()],
     build: {
+     manualChunks:1000,
       rollupOptions: {
         output: {
           manualChunks(id) {
@@ -47,9 +47,17 @@ export default defineConfig({
         },
       },
     },
-    
-    },
-  plugins: [react()]
   
+       // Increase the limit to 800 KB
+    manualChunks:'1000 KB',
+    },
+    babel: {
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+      plugins: ['@babel/plugin-transform-runtime'],
+    },
+    optimizeDeps: {
+      include: ['react-syntax-highlighter', 'react-syntax-highlighter/dist/esm/styles/hljs']
+    },
+    plugins: [react()]
 })
 

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense ,useMemo} from 'react';
 import { Route, createRoutesFromElements } from 'react-router-dom';
 
 import axios from 'axios';
@@ -81,7 +81,7 @@ export const Routes = createRoutesFromElements(
        }
            delay(200);
      }
-`}/></Suspense>} loader={() => { return getArduinoData(1)}} />
+`}/></Suspense>} loader={() => { return  getArduinoData(1)}} />
 
       <Route path='ex2' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment code={`
 const int motorPin = 9;

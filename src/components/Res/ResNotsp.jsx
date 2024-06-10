@@ -1,6 +1,6 @@
 
 import React from "react";
-import CodeDemo from "../Code/Code";
+const CodeDemo =React.lazy(()=>import('../Code/Code')) 
 import { useLoaderData } from "react-router-dom";
  export default function ResNotSp(props)
  {

@@ -25,7 +25,7 @@ export default function Header()
   xl:flex xl:p-2 xl:text-white ">
   <NavLink to="/"  className={({isActive})=>`${isActive?"text-gray-950":"text-black-400"}`}> 
   
-      <li id='li1' className=" xs:ml-2
+      <li id='li1' className=" xs:ml-2 xl:hover:underline xl:hover:text-slate-700
        xl:ml-3
        ">
      
@@ -35,17 +35,17 @@ export default function Header()
      
      
      <NavLink to="arduino" className={({isActive})=>` ${isActive?"text-gray-950":"text-black-400"}`}> 
-      <li className="xs:ml-4 xl:ml-3" >
+      <li className="xs:ml-4 xl:ml-3 xl:hover:underline xl:hover:text-slate-700" >
           ARDUINO
       </li>
       </NavLink>
      <NavLink to="raspberry" className={({isActive})=>` ${isActive?"text-gray-950":"text-black-400"}`}> 
-      <li className="xs:ml-4 xl:ml-3">
+      <li className="xs:ml-4 xl:ml-3 xl:hover:underline xl:hover:text-slate-700">
       RASPBERRY PI
       </li>
       </NavLink> 
       <NavLink to="esp" className={({isActive})=>` ${isActive?"text-gray-950":"text-black-400"}`}>
-      <li className="xs:ml-4 xl:ml-3" >
+      <li className="xs:ml-4 xl:ml-3 xl:hover:underline xl:hover:text-slate-700" >
          ESP32
       </li>
       </NavLink>

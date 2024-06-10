@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import CodeDemo from "../Code/Code";
+const CodeDemo =React.lazy(()=>import('../Code/Code')) 
  export default function Res5images(props)
  {
   let data= useLoaderData()
