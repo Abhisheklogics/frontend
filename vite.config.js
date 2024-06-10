@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   server:{
-  
+   port:10000,
     proxy:{
       
       
