@@ -4,6 +4,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   server:{
    port:10001,
+  host:true,
     proxy:{
       
       
