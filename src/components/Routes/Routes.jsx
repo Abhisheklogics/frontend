@@ -1,4 +1,4 @@
-import React, { lazy, Suspense ,useMemo} from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, createRoutesFromElements } from 'react-router-dom';
 
 import axios from 'axios';

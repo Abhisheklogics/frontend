@@ -1,11 +1,11 @@
 
 import React ,{lazy,Suspense}from "react";
 import { useLoaderData } from "react-router-dom";
-<<<<<<< HEAD
+
 const CodeDemo = lazy(()=>import("../Code/Code"))
-=======
-const CodeDemo =React.lazy(()=>import('../Code/Code')) 
->>>>>>> 662863fe32fc5518d1df360eecc418487093dacd
+
+
+
  export default function Res5images(props)
  {
   let data= useLoaderData()
