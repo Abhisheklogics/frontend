@@ -23,9 +23,7 @@ export default defineConfig({
           // Enable detailed logging
         
     }, 
-     preview:{
-      host:true,
-      port:3000,
+     preview:{  
       proxy:{
       
       
