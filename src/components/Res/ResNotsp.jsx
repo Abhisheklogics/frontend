@@ -2,10 +2,6 @@
 
 import React ,{lazy,Suspense}from "react";
 const CodeDemo = lazy(()=>import("../Code/Code"))
-
-import React from "react";
-
-
 import { useLoaderData } from "react-router-dom";
  export default function ResNotSp(props)
  {

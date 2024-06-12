@@ -4,7 +4,7 @@ import React,{lazy,Suspense} from "react";
 import { useLoaderData} from "react-router-dom";
 
 
-import { useLoaderData} from "react-router-dom";
+
 
 
 

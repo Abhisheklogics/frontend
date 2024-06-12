@@ -10,31 +10,19 @@ export default defineConfig({
     proxy:{
       
       
-        '/arduino/': {
-          target: 'http://localhost:10000/arduino/', // Replace with your backend URL
-          changeOrigin: true,
-          secure: true,
-          logLevel: 'debug', // Enable detailed logging
-        },
-        '/arduino/getDataArduino': {
-          target: 'http://localhost:10000/arduino/', // Replace with your backend URL
-          changeOrigin: true,
-          secure: true,
-          logLevel: 'debug', // Enable detailed logging
-        },
-        '/arduino/getDataRaspberry': {
-          target: 'http://localhost:10000/arduino/', // Replace with your backend URL
-          changeOrigin: true,
-          secure: true,
-          logLevel: 'debug', // Enable detailed logging
-        },
-        '/arduino/getespData': {
-          target: 'http://localhost:10000/arduino/', // Replace with your backend URL
-          changeOrigin: true,
-          secure: true,
-          logLevel: 'debug', // Enable detailed logging
-        },
+        '/arduino/': 'http://localhost:10000/', // Replace with your backend URL
+          // Enable detailed logging
        
+        '/arduino/getDataArduino':'http://localhost:10000/', // Replace with your backend URL
+          // Enable detailed logging
+       
+        '/arduino/getDataRaspberry': 'http://localhost:10000/', // Replace with your backend URL
+          // Enable detailed logging
+        
+        '/arduino/getespData':'http://localhost:10000/', // Replace with your backend URL
+          // Enable detailed logging
+        
+    }, 
      preview:{
       host:true,
       port:3000,
@@ -93,6 +81,6 @@ export default defineConfig({
       include: ['react-syntax-highlighter', 'react-syntax-highlighter/dist/esm/styles/hljs']
     },
     plugins: [react()]
-}})
+})
 
 
