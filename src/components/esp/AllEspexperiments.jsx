@@ -2,6 +2,10 @@
 import React,{lazy,Suspense} from "react";
 import { useLoaderData } from "react-router-dom";
 
+<<<<<<< HEAD
+=======
+const CodeDemo =React.lazy(()=>import('../Code/Code')) 
+>>>>>>> 662863fe32fc5518d1df360eecc418487093dacd
 
 const CodeDemo = lazy(()=>import("../Code/Code"))
  export default function EspExperiments(props)

@@ -25,7 +25,11 @@ export default function Header()
   xl:flex xl:p-2 xl:text-white ">
   <NavLink to="/"  className={({isActive})=>`${isActive?"text-gray-950":"text-black-400"}`}> 
   
+<<<<<<< HEAD
       <li id='li1' className=" xs:ml-0 xs:active:xs:bg-black xs:h-16 xs:mt-4 xs:absolute xs:top-0 xs:hover:underline
+=======
+      <li id='li1' className=" xs:ml-2 xl:hover:underline xl:hover:text-slate-700
+>>>>>>> 662863fe32fc5518d1df360eecc418487093dacd
        xl:ml-3
        ">
      
@@ -35,17 +39,29 @@ export default function Header()
      
      
      <NavLink to="arduino" className={({isActive})=>` ${isActive?"text-gray-950":"text-black-400"}`}> 
+<<<<<<< HEAD
       <li className=" xl:ml-3 xs:ml-14 xs:active:xs:text-black xs:h-16 xs:mt-4 xs:absolute xs:top-0 xs:hover:underline" >
+=======
+      <li className="xs:ml-4 xl:ml-3 xl:hover:underline xl:hover:text-slate-700" >
+>>>>>>> 662863fe32fc5518d1df360eecc418487093dacd
           ARDUINO
       </li>
       </NavLink>
      <NavLink to="raspberry" className={({isActive})=>` ${isActive?"text-gray-950":"text-black-400"}`}> 
+<<<<<<< HEAD
       <li className=" xl:ml-3 xs:hover:underline xs:ml-32 xs:active:xs:text-black xs:h-16 xs:mt-4 xs:absolute xs:top-0 xs:hover:underline">
+=======
+      <li className="xs:ml-4 xl:ml-3 xl:hover:underline xl:hover:text-slate-700">
+>>>>>>> 662863fe32fc5518d1df360eecc418487093dacd
       RASPBERRY PI
       </li>
       </NavLink> 
       <NavLink to="esp" className={({isActive})=>` ${isActive?"text-gray-950":"text-black-400"}`}>
+<<<<<<< HEAD
       <li className=" xl:ml-3 xs:ml-52   xs:active:xs:text-black xs:h-16 xs:mt-4 xs:absolute xs:top-0 xs:left-10 xs:hover:underline" >
+=======
+      <li className="xs:ml-4 xl:ml-3 xl:hover:underline xl:hover:text-slate-700" >
+>>>>>>> 662863fe32fc5518d1df360eecc418487093dacd
          ESP32
       </li>
       </NavLink>

@@ -1,6 +1,11 @@
 
+<<<<<<< HEAD
 import React ,{lazy,Suspense}from "react";
 const CodeDemo = lazy(()=>import("../Code/Code"))
+=======
+import React from "react";
+const CodeDemo =React.lazy(()=>import('../Code/Code')) 
+>>>>>>> 662863fe32fc5518d1df360eecc418487093dacd
 import { useLoaderData } from "react-router-dom";
  export default function ResNotSp(props)
  {
