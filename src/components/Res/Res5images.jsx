@@ -1,7 +1,7 @@
 
-import React from "react";
+import React ,{lazy,Suspense}from "react";
 import { useLoaderData } from "react-router-dom";
-import CodeDemo from "../Code/Code";
+const CodeDemo = lazy(()=>import("../Code/Code"))
  export default function Res5images(props)
  {
   let data= useLoaderData()
@@ -72,7 +72,9 @@ xl:text-wrap xl:leading-8 xl:mt-6">6:  { data.step6}</p>:''}
 xl:text-wrap xl:leading-8 xl:mt-6">7:  { data.step7}</p>:''}
 <h1 className="text-2xl  text-black-900 mt-8">Code:</h1>
 <div >
+  <Suspense fallback={<h1>Code is loading</h1>}>
 <CodeDemo code={props.code}/>
+</Suspense>
     </div>
 <h1  className="xl:text-2xl xl:text-black-900 xl:mt-6">Result:</h1>
 <p className="xl:text-wrap xl:leading-8">{data.result}</p>

@@ -28,11 +28,11 @@ import { getEspData,getArduinoData,getRaspberryData } from '../../../db.call/Ard
 export const Routes = createRoutesFromElements(
   <Route path='/' element={<Suspense><App /></Suspense>}>
     <Route path='' element={<Suspense ><Home /></Suspense>} loader={async () => {
-      const response = await axios.get('arduino/homeData');
+      const response = await axios.get('/arduino/');
       return response.data;
     }} />
     
-    <Route path='arduino' element={<Suspense fallback={<div>Loading...</div>}><Arduino /></Suspense>}>
+    <Route path='arduino' element={<Suspense fallback={<div>  Loading...</div>}><Arduino /></Suspense>}>
       <Route path='' element={<Suspense fallback={<div>Loading...</div>}><AllExperiment code={`int sensor_pin=13; 
       int sensor_state=1; 
       void setup()

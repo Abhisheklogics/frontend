@@ -1,9 +1,9 @@
 
-import React from "react";
+import React,{lazy,Suspense} from "react";
 import { useLoaderData } from "react-router-dom";
 
-import CodeDemo from "../Code/Code";
 
+const CodeDemo = lazy(()=>import("../Code/Code"))
  export default function EspExperiments(props)
  {
   let data= useLoaderData()
@@ -198,8 +198,10 @@ import CodeDemo from "../Code/Code";
       </p>:''}
     
       <h1 className="xl:text-2xl xl:mt-6 xl:text-black-900">Code:</h1>
-    <CodeDemo code={props.code}/>
-  
+      <Suspense fallback={<h1>Code is Loading</h1>}>    
+        <CodeDemo code={props.code}/>
+        </Suspense>
+
 
       <h1 className="xs:text-3xl xs:mt-6 xs:text-black-900
       xl:text-2xl xl:mt-6 xl:text-black-900 ">Result</h1>

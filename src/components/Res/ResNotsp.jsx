@@ -1,6 +1,6 @@
 
-import React from "react";
-import CodeDemo from "../Code/Code";
+import React ,{lazy,Suspense}from "react";
+const CodeDemo = lazy(()=>import("../Code/Code"))
 import { useLoaderData } from "react-router-dom";
  export default function ResNotSp(props)
  {
@@ -62,7 +62,9 @@ xl:text-wrap xl:leading-8 xl:mt-6">5:  { data.step5}</p>:''}
 
 <h1 className="text-2xl  text-black-900 mt-8">Code:</h1>
 <div >
+<Suspense fallback={<h1>Code is loading</h1>}>
 <CodeDemo code={props.code}/>
+</Suspense>
     </div>
 <h1  className="text-2xl text-black-900 mt-6">Result:</h1>
 <p className="text-wrap leading-8">{data.result}</p>

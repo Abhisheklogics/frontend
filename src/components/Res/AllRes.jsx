@@ -1,8 +1,8 @@
 
-import React from "react";
+import React,{lazy,Suspense} from "react";
 
 import { useLoaderData } from "react-router-dom";
-import CodeDemo from "../Code/Code";
+const CodeDemo = lazy(()=>import("../Code/Code"))
  export default function ResAllExperiment(props)
  {
   let data= useLoaderData()
@@ -90,7 +90,9 @@ xl:text-wrap xl:leading-8 xl:mt-6">7:  { data.step7}</p>:''}
 <h1 className="xs:text-wrap xs:leading-8  xs:text-3xl xs:mt-6
 xl:text-2xl  xl:text-black-900 xl:mt-8">Code:</h1>
 <div >
+  <Suspense fallback={<h1>Code is loading</h1>}>
 <CodeDemo code={props.code}/>
+</Suspense>
     </div>
 <h1  className="xs:text-3xl xs:text-black-900 xs:mt-6
 xl:text-2xl xl:text-black-900 xl:mt-6">Result:</h1>

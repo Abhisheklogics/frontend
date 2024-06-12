@@ -1,6 +1,6 @@
-import React from "react";
+import React ,{Fragment, lazy,Suspense}from "react";
 import { useLoaderData } from "react-router-dom";
-import CodeDemo from "../Code/Code";
+const CodeDemo = lazy(()=>import("../Code/Code"))
 let applyData
 export default function ArduinoTwo5(props)
  {
@@ -9,8 +9,8 @@ export default function ArduinoTwo5(props)
     
 
    return(
-   <>
-   <div className="xs:h-fit xs:w-full xs:absolute xs:ml-0 xs:mt-32  xs:p-5 xs:bg-slate-50 xs:bg-cover xs:rounded-xl xs:leading-9 xs:text-justify xs:break-words
+   <Fragment>
+   <div className="xs:h-fit xs:w-full xs:absolute xs:ml-0 xs:mt-44  xs:p-5 xs:bg-slate-50 xs:bg-cover xs:rounded-xl xs:leading-9 xs:text-justify xs:break-words
     xl:h-fit xl:w-3/5 xl:absolute xl:ml-52 xl:mt-32  xl:p-5 xl:bg-slate-50 xl:bg-cover xl:rounded-xl xl:leading-8 xl:text-justify xl:break-words">
        <h1 className="xs:text-2xl  xs:text-black-900
        xl:text-2xl xl:text-center xl:text-black-900">{applyData.ExperimentName}</h1>
@@ -76,7 +76,9 @@ xl:text-2xl  xl:text-black-900 xl:mt-6"> Steps:</h1>
 <h2 className="xs:text-2xl  xs:text-black-900 xs:mt-8
 xl:text-2xl  xl:text-black-900 xl:mt-8" >Code:</h2>
 <div >
-      <CodeDemo code={props.code}/>
+<Suspense fallback={<h1>Code is Loading</h1>}>    
+        <CodeDemo code={props.code}/>
+        </Suspense>
     </div>
    
 
@@ -91,7 +93,7 @@ xl:border-black xl:mt-10"/>
       
     
    
-    </>
+    </Fragment>
   
   ) 
  }

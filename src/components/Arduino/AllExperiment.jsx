@@ -1,8 +1,8 @@
-import React from "react";
+import React,{lazy,Suspense} from "react";
 
 import { useLoaderData} from "react-router-dom";
-import CodeDemo from "../Code/Code";
 
+const CodeDemo = lazy(()=>import("../Code/Code"))
 let applyData;
  export default function AllExperiment(props)
  {
@@ -12,8 +12,9 @@ let applyData;
    return(
    <>
     
+
    
-    <div className="xs:h-fit xs:w-full xs:absolute xs:subpixel-antialiased xs:ml-0 xs:mt-32  xs:p-5 xs:bg-slate-50 xs:bg-cover xs:rounded-xl xs:leading-9 xs:text-justify xs:break-words
+    <div className="xs:h-fit  xs:w-full xs:absolute xs:subpixel-antialiased xs:ml-0 xs:mt-44 xs:top-0 xs:p-5 xs:bg-slate-50 xs:bg-cover xs:rounded-xl xs:leading-9 xs:text-justify xs:break-words
     xl:h-fit xl:w-3/5 xl:absolute xl:ml-52 xl:mt-32  xl:p-5 xl:bg-slate-50 xl:bg-cover xl:rounded-xl xl:leading-8 xl:text-justify xl:break-words">
        <h1 className="xs:text-3xl  xs:text-black-900
        xl:text-2xl xl:text-center xl:text-black-900">{applyData.ExperimentName}</h1>
@@ -31,9 +32,10 @@ let applyData;
   
     
   <h1 className="xs:text-3xl xl:text-2xl">Specifications</h1>
+  <div className=" xl:ml-10 xl:h-fit  xl:w-fit  xl:bg-black">
   <img  className="xs:h-fit xs:w-fit xs:w-full xs:mt-6 xs:ml-0
-  xl:h-72 xl:w-fit xl:mt-6 xl:ml-0 xl:rounded-xl" src={applyData.image2} />
-    
+  xl:h-fit xl:w-96 xl:mt-6 xl:ml-0 " src={applyData.image2} />
+    </div>
   
   
 
@@ -83,7 +85,9 @@ xl:text-wrap xl:leading-8 xl:mt-6">{applyData.step}</p>
 xl:text-2xl  xl:text-black-900 xl:mt-8" >Code:</h2>
 <div >
       
+<Suspense fallback={<h1>Code is Loading</h1>}>    
         <CodeDemo code={props.code}/>
+        </Suspense>
       
     </div>
    
