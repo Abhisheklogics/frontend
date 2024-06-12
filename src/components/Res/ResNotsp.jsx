@@ -10,7 +10,8 @@ import { useLoaderData } from "react-router-dom";
   return(
     <>
      <>
-    <div className="h-fit w-3/5 absolute ml-52 mt-32  p-5 bg-slate-50 bg-cover rounded-xl leading-8 text-justify break-words">
+    <div className="xl:h-fit xl:w-3/5 xl:absolute xl:top-0 xl:ml-52 xl:mt-32  xl:p-5 xl:bg-slate-50 xl:bg-cover
+     xl:rounded-xl xl:leading-8 xl:text-justify xl:break-words">
       
         <h1 className="text-2xl text-center text-black-900">
          {data.ExperimentName}

@@ -1,7 +1,7 @@
 
- import React ,{useMemo} from "react"
+ import React ,{lazy,Suspense} from "react"
  import { NavLink ,useLoaderData} from "react-router-dom"
-
+const Footer = lazy(()=>import('../Footer/Footer'))
 export default function Home()
 { 
   const images=useLoaderData()
@@ -27,7 +27,7 @@ export default function Home()
 </div>
 <div className=" xs:bg-gray-300 xs:text-black xs:pb-4 xs:text-2xl xs:absolute xs:top-1/3  xs:mt-32 xs:h-fit xs:w-full xs:border-slate-600  xs:border-solid xs:border-2
 xs:block 
-xl:absolute xl:bg-violet-300 xl:top-full xl:mt-16 xl:h-1/3 xl:w-full xl:border-slate-600  xl:border-solid xl:border-2 xl:flex xl:justify-evenly xl:items-center">
+xl:absolute xl:bg-gray-300 xl:top-full xl:mt-16 xl:h-1/3 xl:w-full xl:border-slate-600  xl:border-solid xl:border-2 xl:flex xl:justify-evenly xl:items-center">
 
 <NavLink to="Arduino">
 <div className="
@@ -67,7 +67,9 @@ xl:text-center xl:cursor-pointer xl:text-2xl xl: hover:text-blue-900">Esp</p>
 </NavLink>
 
 </div>
-
+<Suspense fallback={<h1></h1>}>
+<Footer/>
+</Suspense>
      </div>
            
           

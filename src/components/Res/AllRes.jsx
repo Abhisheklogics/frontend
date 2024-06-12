@@ -17,7 +17,7 @@ const CodeDemo = lazy(()=>import("../Code/Code"))
      <>
     <div className="xs:h-fit xs:w-full xs:absolute xs:ml-0 xs:mt-32 
     xs:p-5 xs:bg-slate-50 xs:bg-cover xs:rounded-xl xs:leading-8 xs:text-justify xs:break-words xs:text-wrap
-    xl:h-fit xl:w-3/5 xl:absolute xl:ml-52 xl:mt-32 
+    xl:h-fit xl:w-3/5 xl:absolute xl:ml-60 xl:mt-32 xl:top-0
     xl:p-5 xl:bg-slate-50 xl:bg-cover xl:rounded-xl xl:leading-8 xl:text-justify xl:break-words xl:text-wrap">
       
         <h1 className="xs:text-3xl  xs:text-black-900

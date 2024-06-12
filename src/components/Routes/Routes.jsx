@@ -6,7 +6,7 @@ import axios from 'axios';
 // Lazy loading components
 const App=lazy(()=>import('../../App.jsx'))
 const Home = lazy(() => import('../Home/Home.jsx'));
-const Resall = lazy(() => import('../Res/Res.jsx'));
+const Resall = lazy(() => import('../Res/Resall.jsx'));
 const Res5images = lazy(() => import('../Res/Res5images.jsx'));
 const ResNotSp = lazy(() => import('../Res/ResNotsp.jsx'));
 const ResAllExperiment = lazy(() => import('../Res/AllRes.jsx'));
@@ -20,6 +20,7 @@ const ArduinoAlag = lazy(() => import('../Arduino/Arduinoalag.jsx'));
 const Esp = lazy(() => import('../esp/Esp.jsx'));
 const EspExperiments = lazy(() => import('../esp/AllEspexperiments.jsx'));
 import { getEspData,getArduinoData,getRaspberryData } from '../../../db.call/ArduinoDatabaseCalls.js';
+import Contact from '../Contact/Contact.jsx';
 
 
 
@@ -1153,5 +1154,6 @@ void loop() {
  }
  `}/></Suspense>} loader={() => getEspData(7)} />
     </Route>
+    <Route path='Contact' element={<Contact/>}/>
   </Route>
 );

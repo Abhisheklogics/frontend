@@ -1,12 +1,11 @@
 import axios from "axios"
-import { useMemo } from "react";
+
 
 const getArduinoData = async (id) => {
   const response = await axios.get('/arduino/getDataArduino', { params: { exId :id} });
-
+  console.log(response.data)
   return response.data;
 };
-
 const getRaspberryData = async (id) => {
   const response = await axios.get(`/arduino/getDataRaspberry`,{ params: { exId :id} });
  
