@@ -1,6 +1,6 @@
 
-import React,{lazy,Suspense} from "react";
-
+import React,{lazy,Suspense, } from "react";
+import axios from "axios";
 import { useLoaderData} from "react-router-dom";
 
 
@@ -10,11 +10,11 @@ import { useLoaderData} from "react-router-dom";
 
 const CodeDemo = lazy(()=>import("../Code/Code"))
 let applyData;
+
  export default function AllExperiment(props)
  {
-   applyData= useLoaderData()
-   console.log(applyData)
-
+   
+ applyData=useLoaderData()
    return(
    <>
     
@@ -115,6 +115,25 @@ xl:border-black xl:mt-10"/>
   
   ) 
  }
+
+ export const  getArduinoData=async(id)=>
+ {
+
+   const response = await axios.get('/arduino/getDataArduino', { params: { exId :id} });
+   console.log(response.data)
+   return response.data;
+ };
+/*let [id,setid] =useState(null)
+  async function getArduinoData()
+ {
+   const response = await axios.get(`/arduino/getDataRaspberry`,{ params: { exId :setid(1)} });
+ 
+   return response.data;
+ }
+ const data1=useCallback((id)=>{
+  getArduinoData()
+ },id)*/
+ 
  
   
  /* import SyntaxHighlighter from 'react-syntax-highlighter';

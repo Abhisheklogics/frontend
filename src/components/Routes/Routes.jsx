@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense ,useCallback, useEffect, useState} from 'react';
 import { Route, createRoutesFromElements } from 'react-router-dom';
 
 import axios from 'axios';
@@ -19,7 +19,9 @@ const ArduinoThree5 =lazy(()=>import('../Arduino/ArduinoThree.jsx'))
 const ArduinoAlag = lazy(() => import('../Arduino/Arduinoalag.jsx'));
 const Esp = lazy(() => import('../esp/Esp.jsx'));
 const EspExperiments = lazy(() => import('../esp/AllEspexperiments.jsx'));
-import { getEspData,getArduinoData,getRaspberryData } from '../../../db.call/ArduinoDatabaseCalls.js';
+import {getArduinoData} from '../Arduino/AllExperiment.jsx'
+import {getRaspberryData} from '../Res/AllRes.jsx'
+import {getEspData} from '../esp/AllEspexperiments.jsx'
 import Contact from '../Contact/Contact.jsx';
 
 

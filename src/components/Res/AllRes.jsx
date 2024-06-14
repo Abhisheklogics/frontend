@@ -1,6 +1,6 @@
 
 import React,{lazy,Suspense} from "react";
-
+import axios from "axios";
 import { useLoaderData } from "react-router-dom";
 
 const CodeDemo = lazy(()=>import("../Code/Code"))
@@ -109,7 +109,13 @@ xl:border-black xl:mt-10"/>
     </>
   )
  }
-
+ export const  getRaspberryData=async(id)=>
+  {
+ 
+    const response = await axios.get('/arduino/getDataRaspberry', { params: { exId :id} });
+    console.log(response.data)
+    return response.data;
+  };
   /*  <h1 className="text-wrap leading-8 mt-6 text-2xl">Specification</h1>
         <img src={data.image2} className="h-72 mt-6 ml-10 rounded" />
    <img src={data.image2} className="h-72 mt-6 ml-10 rounded" />

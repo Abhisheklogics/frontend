@@ -1,5 +1,6 @@
 
 import React,{lazy,Suspense} from "react";
+import axios from "axios";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -214,5 +215,13 @@ const CodeDemo = lazy(()=>import("../Code/Code"))
     </>
   )
  }
+
+ export const  getEspData =async(id)=>
+  {
+ 
+    const response = await axios.get('/arduino/getespData', { params: { exId :id} });
+    console.log(response.data)
+    return response.data;
+  };
  
   
