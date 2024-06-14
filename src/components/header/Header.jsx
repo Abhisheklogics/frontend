@@ -21,7 +21,7 @@ export default function Header()
       <div className="xs:bg-green-700 xs:h-12 xs:w-full  xs:ml-0 xs:mt-16 xs:absolute 
        xl:bg-green-700 xl:h-12 xl:w-full xl:p-1 xl:ml-0 xl:mt-16 xl:absolute ">
        
-  <ul className=" xs:flex xs:p-4 xs:text-white  xs:text-sm xs:items-center
+  <ul className=" xs:flex xs:p-4 xs:text-white  xs:text-sm xs:items-center 
   xl:flex xl:p-2 xl:text-white ">
   <NavLink to="/"  className={({isActive})=>`${isActive?"text-gray-950":"text-black-400"}`}> 
   

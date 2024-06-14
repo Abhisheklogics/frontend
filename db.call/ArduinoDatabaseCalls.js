@@ -3,7 +3,7 @@ import axios from "axios"
 
 const getArduinoData = async (id) => {
   const response = await axios.get('/arduino/getDataArduino', { params: { exId :id} });
-  console.log(response.data)
+
   return response.data;
 };
 const getRaspberryData = async (id) => {

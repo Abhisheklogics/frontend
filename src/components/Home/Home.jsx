@@ -9,23 +9,24 @@ export default function Home()
     return(
       
         <>
-     <div className=" " >
+     <div className="xl:h-full  " >
 
       <div className=" xs:h-fit xs:w-fit  xs:bg:cover xs:flex xl:bg-cover xl:md
       ">
        
  <img className=" xs:bg-cover xs:absolute xs:top-28  xs:w-fit xs:h-fit  
   xl:bg-cover xl:absolute xl:w-full xl:top-28 xl:h-5/6" src={images[0].image1} />
+    <marquee className=" xl:absolute xl:text-gray-700 xl:text-4xl xl:mt-96 xl:top-2/2"> Adhayanshala Presents</marquee>
   </div>
 
 
 
 
-<div className=" xs:bg-gray-700 xs:absolute xs:top-1/3  xs:mt-16 xs:h-12 xs:w-full xs:text-white xs:p-1 xs:text-center
+<div className="xl:shadow-lg xl:dark:bg-gray-800 xs:bg-gray-700 xs:absolute xs:top-1/3  xs:mt-16 xs:h-12 xs:w-full xs:text-white xs:p-1 xs:text-center
   xs:text-2xl xl:absolute xl:top-full xl:mt-3 xl:h-12 xl:w-full xl:bg-gray-700 xl:text-white xl:p-1 xl:text-center xl:text-2xl">
-  <h1> Latest technology</h1>
+  <h1 className="xl:text-blue-400"> Latest technology</h1>
 </div>
-<div className=" xs:bg-gray-300 xs:text-black xs:pb-4 xs:text-2xl xs:absolute xs:top-1/3  xs:mt-32 xs:h-fit xs:w-full xs:border-slate-600  xs:border-solid xs:border-2
+<div className=" xl:shadow-lg xl:dark:bg-gray-800 xs:bg-gray-300 xs:text-black xs:pb-4 xs:text-2xl xs:absolute xs:top-1/3  xs:mt-32 xs:h-fit xs:w-full xs:border-slate-600  xs:border-solid xs:border-2
 xs:block 
 xl:absolute xl:bg-gray-300 xl:top-full xl:mt-16 xl:h-1/3 xl:w-full xl:border-slate-600  xl:border-solid xl:border-2 xl:flex xl:justify-evenly xl:items-center">
 
